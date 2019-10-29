@@ -24,5 +24,30 @@ namespace LVRS_Database
         {
             InitializeComponent();
         }
+
+        public void clearAll()
+        {
+            foreach(UIElement control in all.Children)
+            {
+                if(control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+                if (control is DatePicker)
+                {
+                    ((DatePicker)control).Text = "";
+                }
+                if (control is CheckBox)
+                {
+                    ((CheckBox)control).IsChecked = false;
+                }
+            }
+
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            clearAll();
+        }
     }
 }
