@@ -49,6 +49,9 @@
         <Button Grid.Row="0" Grid.Column="2" 
                 Margin="2" Content="Clear" Click="Clear_Click" />
 
+        <Button Grid.Row="0" Grid.Column="3" 
+                Margin="2" Content="Submit" Click="Submit_Click" />
+
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="Birthday" />
         <DatePicker Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="1"
@@ -152,21 +155,33 @@
 
         <TextBlock Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="Background Date" />
+        <DatePicker Grid.Row="1" Grid.Column="5" VerticalContentAlignment="Center" Margin="1"
+                    Name="backgroundDate" />
 
         <TextBlock Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="Background Passed" />
+        <CheckBox Grid.Row="2" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  Margin="1" Name="backgroundPass" />
 
         <TextBlock Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="Comments" />
+        <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" Margin="1"
+                 Name="backgroundComments" />
 
         <TextBlock Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="VRS Date" />
+        <DatePicker Grid.Row="5" Grid.Column="5" VerticalContentAlignment="Center" Margin="1"
+                    Name="vrsDate" />
 
         <TextBlock Grid.Row="6" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="VRS Passed" />
+        <CheckBox Grid.Row="6" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  Margin="1" Name="vrsPass" />
 
         <TextBlock Grid.Row="7" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="5" Text="Comments" />
+        <TextBox Grid.Row="7" Grid.Column="5" VerticalContentAlignment="Center" Margin="1"
+                 Name="vrsComments" />
 
     </Grid>
 </Page>
