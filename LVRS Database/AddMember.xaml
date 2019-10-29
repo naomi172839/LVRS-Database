@@ -1,0 +1,42 @@
+﻿<Page x:Class="LVRS_Database.AddMember"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LVRS_Database"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="AddMember">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="45" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   Margin="10" Text="Last Name" FontSize="24" />
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   Margin="10" Text="First Name" FontSize="24" />
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   Margin="10" Text="Middle Name" FontSize="24" />
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="10" FontSize="24" Name="lastName" 
+                 VerticalContentAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" FontSize="24" Name="firstName" 
+                 VerticalContentAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" FontSize="24" Name="middleName" 
+                 VerticalContentAlignment="Center" />
+        <Button Grid.Row="3" Grid.Column="0" Content="Clear" Margin="10" FontSize="18" 
+                Click="Clear_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Submit" Margin="10" FontSize="18" 
+                Click="Submit_Click"/>
+
+    </Grid>
+</Page>

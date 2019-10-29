@@ -1,0 +1,2106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LVRSMEMBERSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="addressStreet" Type="varchar" MaxLength="255" />
+          <Property Name="addressCity" Type="varchar" MaxLength="255" />
+          <Property Name="addressState" Type="varchar" MaxLength="255" />
+          <Property Name="addressZip" Type="int" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="applicationStatus">
+          <Key>
+            <PropertyRef Name="appStatID" />
+          </Key>
+          <Property Name="appStatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="appStatTypeID" Type="int" Nullable="false" />
+          <Property Name="appStatNotes" Type="varchar" MaxLength="255" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="applicationStatusTypes">
+          <Key>
+            <PropertyRef Name="appStatTypeID" />
+          </Key>
+          <Property Name="appStatTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="applicationStatusType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="awards">
+          <Key>
+            <PropertyRef Name="awardID" />
+          </Key>
+          <Property Name="awardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="awardTypeID" Type="int" Nullable="false" />
+          <Property Name="awardDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="awardTypes">
+          <Key>
+            <PropertyRef Name="awardTypeID" />
+          </Key>
+          <Property Name="awardTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="awardType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="background">
+          <Key>
+            <PropertyRef Name="backID" />
+          </Key>
+          <Property Name="backID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateBackgroundPassed" Type="date" />
+          <Property Name="backgroundSuccess" Type="bit" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="birthdays">
+          <Key>
+            <PropertyRef Name="birthID" />
+          </Key>
+          <Property Name="birthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="birthDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="countyNumber">
+          <Key>
+            <PropertyRef Name="counNumID" />
+          </Key>
+          <Property Name="counNumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateCountyNumberReceived" Type="date" />
+          <Property Name="counNum" Type="int" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="dropped">
+          <Key>
+            <PropertyRef Name="dropID" />
+          </Key>
+          <Property Name="dropID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateDropped" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="dualMembers">
+          <Key>
+            <PropertyRef Name="dualID" />
+          </Key>
+          <Property Name="dualID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateDualAccepted" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="email">
+          <Key>
+            <PropertyRef Name="emailID" />
+          </Key>
+          <Property Name="emailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="emailAddress" Type="varchar" MaxLength="255" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="finalJoinStatus">
+          <Key>
+            <PropertyRef Name="finJoinID" />
+          </Key>
+          <Property Name="finJoinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="statID" Type="int" Nullable="false" />
+          <Property Name="finalJoinDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="fingerprints">
+          <Key>
+            <PropertyRef Name="fingID" />
+          </Key>
+          <Property Name="fingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="fingerprintAppointmentDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="initialJoinStatus">
+          <Key>
+            <PropertyRef Name="initJoinID" />
+          </Key>
+          <Property Name="initJoinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="statID" Type="int" Nullable="false" />
+          <Property Name="initialJoinDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="interviewContact">
+          <Key>
+            <PropertyRef Name="intConID" />
+          </Key>
+          <Property Name="intConID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="contactDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="interviewSchedule">
+          <Key>
+            <PropertyRef Name="intSchID" />
+          </Key>
+          <Property Name="intSchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="interviewScheduled" Type="datetime" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="jobs">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="jobTypeID" Type="int" Nullable="false" />
+          <Property Name="jobDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="jobTypes">
+          <Key>
+            <PropertyRef Name="jobTypeID" />
+          </Key>
+          <Property Name="jobTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="jotForm">
+          <Key>
+            <PropertyRef Name="jotID" />
+          </Key>
+          <Property Name="jotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="jotFormReceived" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="leaveStatus">
+          <Key>
+            <PropertyRef Name="leaveID" />
+          </Key>
+          <Property Name="leaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="leaveTypeID" Type="int" Nullable="false" />
+          <Property Name="leaveApproved" Type="bit" Nullable="false" />
+          <Property Name="leaveStartDate" Type="date" />
+          <Property Name="leaveEndDate" Type="date" />
+          <Property Name="leaveNotes" Type="varchar" MaxLength="255" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="leaveTypes">
+          <Key>
+            <PropertyRef Name="leaveTypeID" />
+          </Key>
+          <Property Name="leaveTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="leaveType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="members">
+          <Key>
+            <PropertyRef Name="memberID" />
+          </Key>
+          <Property Name="memberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="255" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="phone">
+          <Key>
+            <PropertyRef Name="phoneID" />
+          </Key>
+          <Property Name="phoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="30" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="physicalPassed">
+          <Key>
+            <PropertyRef Name="physPassID" />
+          </Key>
+          <Property Name="physPassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="passPhysical" Type="bit" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="physicalSchedule">
+          <Key>
+            <PropertyRef Name="physSchID" />
+          </Key>
+          <Property Name="physSchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="physicalScheduleDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="probation">
+          <Key>
+            <PropertyRef Name="probID" />
+          </Key>
+          <Property Name="probID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="probationExtensionStartDate" Type="date" />
+          <Property Name="probationExtensionEndDate" Type="date" />
+          <Property Name="probationExtensionReason" Type="varchar" MaxLength="255" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="resigned">
+          <Key>
+            <PropertyRef Name="resignID" />
+          </Key>
+          <Property Name="resignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateResigned" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="rideAlong">
+          <Key>
+            <PropertyRef Name="rideID" />
+          </Key>
+          <Property Name="rideID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="rideAlongFinished" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="statusChange">
+          <Key>
+            <PropertyRef Name="statusID" />
+          </Key>
+          <Property Name="statusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="statID" Type="int" Nullable="false" />
+          <Property Name="statusChangeDate" Type="date" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="statusTypes">
+          <Key>
+            <PropertyRef Name="statID" />
+          </Key>
+          <Property Name="statID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statusType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="vrs">
+          <Key>
+            <PropertyRef Name="vrsID" />
+          </Key>
+          <Property Name="vrsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="dateVrsCompleted" Type="date" />
+          <Property Name="vrsPassed" Type="bit" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__address__memberI__2739D489">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="address" Type="Self.address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__applicati__appSt__09A971A2">
+          <End Role="applicationStatusTypes" Type="Self.applicationStatusTypes" Multiplicity="1" />
+          <End Role="applicationStatus" Type="Self.applicationStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="applicationStatusTypes">
+              <PropertyRef Name="appStatTypeID" />
+            </Principal>
+            <Dependent Role="applicationStatus">
+              <PropertyRef Name="appStatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__applicati__membe__08B54D69">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="applicationStatus" Type="Self.applicationStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="applicationStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__awards__awardTyp__0D7A0286">
+          <End Role="awardTypes" Type="Self.awardTypes" Multiplicity="1" />
+          <End Role="awards" Type="Self.awards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="awardTypes">
+              <PropertyRef Name="awardTypeID" />
+            </Principal>
+            <Dependent Role="awards">
+              <PropertyRef Name="awardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__awards__memberID__0C85DE4D">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="awards" Type="Self.awards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="awards">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__backgroun__membe__5165187F">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="background" Type="Self.background" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="background">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__birthdays__membe__5441852A">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="birthdays" Type="Self.birthdays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="birthdays">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__countyNum__membe__571DF1D5">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="countyNumber" Type="Self.countyNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="countyNumber">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dropped__memberI__59FA5E80">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="dropped" Type="Self.dropped" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="dropped">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dualMembe__membe__5CD6CB2B">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="dualMembers" Type="Self.dualMembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="dualMembers">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__email__memberID__4E88ABD4">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="email" Type="Self.email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="email">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__finalJoin__membe__10566F31">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="finalJoinStatus" Type="Self.finalJoinStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="finalJoinStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__finalJoin__statI__114A936A">
+          <End Role="statusTypes" Type="Self.statusTypes" Multiplicity="1" />
+          <End Role="finalJoinStatus" Type="Self.finalJoinStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="finalJoinStatus">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__fingerpri__membe__5FB337D6">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="fingerprints" Type="Self.fingerprints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="fingerprints">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__initialJo__membe__14270015">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="initialJoinStatus" Type="Self.initialJoinStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="initialJoinStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__initialJo__statI__151B244E">
+          <End Role="statusTypes" Type="Self.statusTypes" Multiplicity="1" />
+          <End Role="initialJoinStatus" Type="Self.initialJoinStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="initialJoinStatus">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__interview__membe__628FA481">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="interviewContact" Type="Self.interviewContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="interviewContact">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__interview__membe__656C112C">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="interviewSchedule" Type="Self.interviewSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="interviewSchedule">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jobs__jobTypeID__18EBB532">
+          <End Role="jobTypes" Type="Self.jobTypes" Multiplicity="1" />
+          <End Role="jobs" Type="Self.jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobTypes">
+              <PropertyRef Name="jobTypeID" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="jobTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jobs__memberID__17F790F9">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="jobs" Type="Self.jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jotForm__memberI__68487DD7">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="jotForm" Type="Self.jotForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="jotForm">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__leaveStat__leave__1CBC4616">
+          <End Role="leaveTypes" Type="Self.leaveTypes" Multiplicity="1" />
+          <End Role="leaveStatus" Type="Self.leaveStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="leaveTypes">
+              <PropertyRef Name="leaveTypeID" />
+            </Principal>
+            <Dependent Role="leaveStatus">
+              <PropertyRef Name="leaveTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__leaveStat__membe__1BC821DD">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="leaveStatus" Type="Self.leaveStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="leaveStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__phone__memberID__6B24EA82">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="phone" Type="Self.phone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="phone">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__physicalP__membe__6E01572D">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="physicalPassed" Type="Self.physicalPassed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="physicalPassed">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__physicalS__membe__70DDC3D8">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="physicalSchedule" Type="Self.physicalSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="physicalSchedule">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__probation__membe__73BA3083">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="probation" Type="Self.probation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="probation">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__resigned__member__76969D2E">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="resigned" Type="Self.resigned" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="resigned">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rideAlong__membe__797309D9">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="rideAlong" Type="Self.rideAlong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="rideAlong">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__statusCha__membe__1F98B2C1">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="statusChange" Type="Self.statusChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="statusChange">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__statusCha__statI__208CD6FA">
+          <End Role="statusTypes" Type="Self.statusTypes" Multiplicity="1" />
+          <End Role="statusChange" Type="Self.statusChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="statusChange">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vrs__memberID__7C4F7684">
+          <End Role="members" Type="Self.members" Multiplicity="1" />
+          <End Role="vrs" Type="Self.vrs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="vrs">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LVRSMEMBERSModelStoreContainer">
+          <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applicationStatus" EntityType="Self.applicationStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applicationStatusTypes" EntityType="Self.applicationStatusTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="awards" EntityType="Self.awards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="awardTypes" EntityType="Self.awardTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="background" EntityType="Self.background" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="birthdays" EntityType="Self.birthdays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="countyNumber" EntityType="Self.countyNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dropped" EntityType="Self.dropped" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dualMembers" EntityType="Self.dualMembers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="email" EntityType="Self.email" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="finalJoinStatus" EntityType="Self.finalJoinStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fingerprints" EntityType="Self.fingerprints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="initialJoinStatus" EntityType="Self.initialJoinStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="interviewContact" EntityType="Self.interviewContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="interviewSchedule" EntityType="Self.interviewSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobs" EntityType="Self.jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobTypes" EntityType="Self.jobTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jotForm" EntityType="Self.jotForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="leaveStatus" EntityType="Self.leaveStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="leaveTypes" EntityType="Self.leaveTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phone" EntityType="Self.phone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="physicalPassed" EntityType="Self.physicalPassed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="physicalSchedule" EntityType="Self.physicalSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="probation" EntityType="Self.probation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="resigned" EntityType="Self.resigned" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rideAlong" EntityType="Self.rideAlong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="statusChange" EntityType="Self.statusChange" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="statusTypes" EntityType="Self.statusTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vrs" EntityType="Self.vrs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__address__memberI__2739D489" Association="Self.FK__address__memberI__2739D489">
+            <End Role="members" EntitySet="members" />
+            <End Role="address" EntitySet="address" />
+          </AssociationSet>
+          <AssociationSet Name="FK__applicati__appSt__09A971A2" Association="Self.FK__applicati__appSt__09A971A2">
+            <End Role="applicationStatusTypes" EntitySet="applicationStatusTypes" />
+            <End Role="applicationStatus" EntitySet="applicationStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__applicati__membe__08B54D69" Association="Self.FK__applicati__membe__08B54D69">
+            <End Role="members" EntitySet="members" />
+            <End Role="applicationStatus" EntitySet="applicationStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__awards__awardTyp__0D7A0286" Association="Self.FK__awards__awardTyp__0D7A0286">
+            <End Role="awardTypes" EntitySet="awardTypes" />
+            <End Role="awards" EntitySet="awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__awards__memberID__0C85DE4D" Association="Self.FK__awards__memberID__0C85DE4D">
+            <End Role="members" EntitySet="members" />
+            <End Role="awards" EntitySet="awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__backgroun__membe__5165187F" Association="Self.FK__backgroun__membe__5165187F">
+            <End Role="members" EntitySet="members" />
+            <End Role="background" EntitySet="background" />
+          </AssociationSet>
+          <AssociationSet Name="FK__birthdays__membe__5441852A" Association="Self.FK__birthdays__membe__5441852A">
+            <End Role="members" EntitySet="members" />
+            <End Role="birthdays" EntitySet="birthdays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__countyNum__membe__571DF1D5" Association="Self.FK__countyNum__membe__571DF1D5">
+            <End Role="members" EntitySet="members" />
+            <End Role="countyNumber" EntitySet="countyNumber" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dropped__memberI__59FA5E80" Association="Self.FK__dropped__memberI__59FA5E80">
+            <End Role="members" EntitySet="members" />
+            <End Role="dropped" EntitySet="dropped" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dualMembe__membe__5CD6CB2B" Association="Self.FK__dualMembe__membe__5CD6CB2B">
+            <End Role="members" EntitySet="members" />
+            <End Role="dualMembers" EntitySet="dualMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__email__memberID__4E88ABD4" Association="Self.FK__email__memberID__4E88ABD4">
+            <End Role="members" EntitySet="members" />
+            <End Role="email" EntitySet="email" />
+          </AssociationSet>
+          <AssociationSet Name="FK__finalJoin__membe__10566F31" Association="Self.FK__finalJoin__membe__10566F31">
+            <End Role="members" EntitySet="members" />
+            <End Role="finalJoinStatus" EntitySet="finalJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__finalJoin__statI__114A936A" Association="Self.FK__finalJoin__statI__114A936A">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="finalJoinStatus" EntitySet="finalJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__fingerpri__membe__5FB337D6" Association="Self.FK__fingerpri__membe__5FB337D6">
+            <End Role="members" EntitySet="members" />
+            <End Role="fingerprints" EntitySet="fingerprints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__initialJo__membe__14270015" Association="Self.FK__initialJo__membe__14270015">
+            <End Role="members" EntitySet="members" />
+            <End Role="initialJoinStatus" EntitySet="initialJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__initialJo__statI__151B244E" Association="Self.FK__initialJo__statI__151B244E">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="initialJoinStatus" EntitySet="initialJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__interview__membe__628FA481" Association="Self.FK__interview__membe__628FA481">
+            <End Role="members" EntitySet="members" />
+            <End Role="interviewContact" EntitySet="interviewContact" />
+          </AssociationSet>
+          <AssociationSet Name="FK__interview__membe__656C112C" Association="Self.FK__interview__membe__656C112C">
+            <End Role="members" EntitySet="members" />
+            <End Role="interviewSchedule" EntitySet="interviewSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jobs__jobTypeID__18EBB532" Association="Self.FK__jobs__jobTypeID__18EBB532">
+            <End Role="jobTypes" EntitySet="jobTypes" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jobs__memberID__17F790F9" Association="Self.FK__jobs__memberID__17F790F9">
+            <End Role="members" EntitySet="members" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jotForm__memberI__68487DD7" Association="Self.FK__jotForm__memberI__68487DD7">
+            <End Role="members" EntitySet="members" />
+            <End Role="jotForm" EntitySet="jotForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__leaveStat__leave__1CBC4616" Association="Self.FK__leaveStat__leave__1CBC4616">
+            <End Role="leaveTypes" EntitySet="leaveTypes" />
+            <End Role="leaveStatus" EntitySet="leaveStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__leaveStat__membe__1BC821DD" Association="Self.FK__leaveStat__membe__1BC821DD">
+            <End Role="members" EntitySet="members" />
+            <End Role="leaveStatus" EntitySet="leaveStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__phone__memberID__6B24EA82" Association="Self.FK__phone__memberID__6B24EA82">
+            <End Role="members" EntitySet="members" />
+            <End Role="phone" EntitySet="phone" />
+          </AssociationSet>
+          <AssociationSet Name="FK__physicalP__membe__6E01572D" Association="Self.FK__physicalP__membe__6E01572D">
+            <End Role="members" EntitySet="members" />
+            <End Role="physicalPassed" EntitySet="physicalPassed" />
+          </AssociationSet>
+          <AssociationSet Name="FK__physicalS__membe__70DDC3D8" Association="Self.FK__physicalS__membe__70DDC3D8">
+            <End Role="members" EntitySet="members" />
+            <End Role="physicalSchedule" EntitySet="physicalSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__probation__membe__73BA3083" Association="Self.FK__probation__membe__73BA3083">
+            <End Role="members" EntitySet="members" />
+            <End Role="probation" EntitySet="probation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__resigned__member__76969D2E" Association="Self.FK__resigned__member__76969D2E">
+            <End Role="members" EntitySet="members" />
+            <End Role="resigned" EntitySet="resigned" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rideAlong__membe__797309D9" Association="Self.FK__rideAlong__membe__797309D9">
+            <End Role="members" EntitySet="members" />
+            <End Role="rideAlong" EntitySet="rideAlong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__statusCha__membe__1F98B2C1" Association="Self.FK__statusCha__membe__1F98B2C1">
+            <End Role="members" EntitySet="members" />
+            <End Role="statusChange" EntitySet="statusChange" />
+          </AssociationSet>
+          <AssociationSet Name="FK__statusCha__statI__208CD6FA" Association="Self.FK__statusCha__statI__208CD6FA">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="statusChange" EntitySet="statusChange" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vrs__memberID__7C4F7684" Association="Self.FK__vrs__memberID__7C4F7684">
+            <End Role="members" EntitySet="members" />
+            <End Role="vrs" EntitySet="vrs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LVRSMEMBERSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="addressStreet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="addressCity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="addressState" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="addressZip" Type="Int32" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__address__memberI__2739D489" FromRole="address" ToRole="members" />
+        </EntityType>
+        <EntityType Name="applicationStatu">
+          <Key>
+            <PropertyRef Name="appStatID" />
+          </Key>
+          <Property Name="appStatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="appStatTypeID" Type="Int32" Nullable="false" />
+          <Property Name="appStatNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="applicationStatusType" Relationship="Self.FK__applicati__appSt__09A971A2" FromRole="applicationStatus" ToRole="applicationStatusTypes" />
+          <NavigationProperty Name="member" Relationship="Self.FK__applicati__membe__08B54D69" FromRole="applicationStatus" ToRole="members" />
+        </EntityType>
+        <EntityType Name="applicationStatusType">
+          <Key>
+            <PropertyRef Name="appStatTypeID" />
+          </Key>
+          <Property Name="appStatTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="applicationStatusType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="applicationStatus" Relationship="Self.FK__applicati__appSt__09A971A2" FromRole="applicationStatusTypes" ToRole="applicationStatus" />
+        </EntityType>
+        <EntityType Name="award">
+          <Key>
+            <PropertyRef Name="awardID" />
+          </Key>
+          <Property Name="awardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="awardTypeID" Type="Int32" Nullable="false" />
+          <Property Name="awardDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="awardType" Relationship="Self.FK__awards__awardTyp__0D7A0286" FromRole="awards" ToRole="awardTypes" />
+          <NavigationProperty Name="member" Relationship="Self.FK__awards__memberID__0C85DE4D" FromRole="awards" ToRole="members" />
+        </EntityType>
+        <EntityType Name="awardType">
+          <Key>
+            <PropertyRef Name="awardTypeID" />
+          </Key>
+          <Property Name="awardTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="awardType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="awards" Relationship="Self.FK__awards__awardTyp__0D7A0286" FromRole="awardTypes" ToRole="awards" />
+        </EntityType>
+        <EntityType Name="background">
+          <Key>
+            <PropertyRef Name="backID" />
+          </Key>
+          <Property Name="backID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateBackgroundPassed" Type="DateTime" Precision="0" />
+          <Property Name="backgroundSuccess" Type="Boolean" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__backgroun__membe__5165187F" FromRole="background" ToRole="members" />
+        </EntityType>
+        <EntityType Name="birthday">
+          <Key>
+            <PropertyRef Name="birthID" />
+          </Key>
+          <Property Name="birthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="birthDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__birthdays__membe__5441852A" FromRole="birthdays" ToRole="members" />
+        </EntityType>
+        <EntityType Name="countyNumber">
+          <Key>
+            <PropertyRef Name="counNumID" />
+          </Key>
+          <Property Name="counNumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateCountyNumberReceived" Type="DateTime" Precision="0" />
+          <Property Name="counNum" Type="Int32" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__countyNum__membe__571DF1D5" FromRole="countyNumber" ToRole="members" />
+        </EntityType>
+        <EntityType Name="dropped">
+          <Key>
+            <PropertyRef Name="dropID" />
+          </Key>
+          <Property Name="dropID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateDropped" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__dropped__memberI__59FA5E80" FromRole="dropped" ToRole="members" />
+        </EntityType>
+        <EntityType Name="dualMember">
+          <Key>
+            <PropertyRef Name="dualID" />
+          </Key>
+          <Property Name="dualID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateDualAccepted" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__dualMembe__membe__5CD6CB2B" FromRole="dualMembers" ToRole="members" />
+        </EntityType>
+        <EntityType Name="email">
+          <Key>
+            <PropertyRef Name="emailID" />
+          </Key>
+          <Property Name="emailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="emailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__email__memberID__4E88ABD4" FromRole="email" ToRole="members" />
+        </EntityType>
+        <EntityType Name="finalJoinStatu">
+          <Key>
+            <PropertyRef Name="finJoinID" />
+          </Key>
+          <Property Name="finJoinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="statID" Type="Int32" Nullable="false" />
+          <Property Name="finalJoinDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__finalJoin__membe__10566F31" FromRole="finalJoinStatus" ToRole="members" />
+          <NavigationProperty Name="statusType" Relationship="Self.FK__finalJoin__statI__114A936A" FromRole="finalJoinStatus" ToRole="statusTypes" />
+        </EntityType>
+        <EntityType Name="fingerprint">
+          <Key>
+            <PropertyRef Name="fingID" />
+          </Key>
+          <Property Name="fingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="fingerprintAppointmentDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__fingerpri__membe__5FB337D6" FromRole="fingerprints" ToRole="members" />
+        </EntityType>
+        <EntityType Name="initialJoinStatu">
+          <Key>
+            <PropertyRef Name="initJoinID" />
+          </Key>
+          <Property Name="initJoinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="statID" Type="Int32" Nullable="false" />
+          <Property Name="initialJoinDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__initialJo__membe__14270015" FromRole="initialJoinStatus" ToRole="members" />
+          <NavigationProperty Name="statusType" Relationship="Self.FK__initialJo__statI__151B244E" FromRole="initialJoinStatus" ToRole="statusTypes" />
+        </EntityType>
+        <EntityType Name="interviewContact">
+          <Key>
+            <PropertyRef Name="intConID" />
+          </Key>
+          <Property Name="intConID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="contactDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__interview__membe__628FA481" FromRole="interviewContact" ToRole="members" />
+        </EntityType>
+        <EntityType Name="interviewSchedule">
+          <Key>
+            <PropertyRef Name="intSchID" />
+          </Key>
+          <Property Name="intSchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="interviewScheduled" Type="DateTime" Precision="3" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__interview__membe__656C112C" FromRole="interviewSchedule" ToRole="members" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="jobTypeID" Type="Int32" Nullable="false" />
+          <Property Name="jobDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobType" Relationship="Self.FK__jobs__jobTypeID__18EBB532" FromRole="jobs" ToRole="jobTypes" />
+          <NavigationProperty Name="member" Relationship="Self.FK__jobs__memberID__17F790F9" FromRole="jobs" ToRole="members" />
+        </EntityType>
+        <EntityType Name="jobType">
+          <Key>
+            <PropertyRef Name="jobTypeID" />
+          </Key>
+          <Property Name="jobTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobs" Relationship="Self.FK__jobs__jobTypeID__18EBB532" FromRole="jobTypes" ToRole="jobs" />
+        </EntityType>
+        <EntityType Name="jotForm">
+          <Key>
+            <PropertyRef Name="jotID" />
+          </Key>
+          <Property Name="jotID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="jotFormReceived" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__jotForm__memberI__68487DD7" FromRole="jotForm" ToRole="members" />
+        </EntityType>
+        <EntityType Name="leaveStatu">
+          <Key>
+            <PropertyRef Name="leaveID" />
+          </Key>
+          <Property Name="leaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="leaveTypeID" Type="Int32" Nullable="false" />
+          <Property Name="leaveApproved" Type="Boolean" Nullable="false" />
+          <Property Name="leaveStartDate" Type="DateTime" Precision="0" />
+          <Property Name="leaveEndDate" Type="DateTime" Precision="0" />
+          <Property Name="leaveNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="leaveType" Relationship="Self.FK__leaveStat__leave__1CBC4616" FromRole="leaveStatus" ToRole="leaveTypes" />
+          <NavigationProperty Name="member" Relationship="Self.FK__leaveStat__membe__1BC821DD" FromRole="leaveStatus" ToRole="members" />
+        </EntityType>
+        <EntityType Name="leaveType">
+          <Key>
+            <PropertyRef Name="leaveTypeID" />
+          </Key>
+          <Property Name="leaveTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="leaveType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="leaveStatus" Relationship="Self.FK__leaveStat__leave__1CBC4616" FromRole="leaveTypes" ToRole="leaveStatus" />
+        </EntityType>
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="memberID" />
+          </Key>
+          <Property Name="memberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middleName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="addresses" Relationship="Self.FK__address__memberI__2739D489" FromRole="members" ToRole="address" />
+          <NavigationProperty Name="applicationStatus" Relationship="Self.FK__applicati__membe__08B54D69" FromRole="members" ToRole="applicationStatus" />
+          <NavigationProperty Name="awards" Relationship="Self.FK__awards__memberID__0C85DE4D" FromRole="members" ToRole="awards" />
+          <NavigationProperty Name="backgrounds" Relationship="Self.FK__backgroun__membe__5165187F" FromRole="members" ToRole="background" />
+          <NavigationProperty Name="birthdays" Relationship="Self.FK__birthdays__membe__5441852A" FromRole="members" ToRole="birthdays" />
+          <NavigationProperty Name="countyNumbers" Relationship="Self.FK__countyNum__membe__571DF1D5" FromRole="members" ToRole="countyNumber" />
+          <NavigationProperty Name="droppeds" Relationship="Self.FK__dropped__memberI__59FA5E80" FromRole="members" ToRole="dropped" />
+          <NavigationProperty Name="dualMembers" Relationship="Self.FK__dualMembe__membe__5CD6CB2B" FromRole="members" ToRole="dualMembers" />
+          <NavigationProperty Name="emails" Relationship="Self.FK__email__memberID__4E88ABD4" FromRole="members" ToRole="email" />
+          <NavigationProperty Name="finalJoinStatus" Relationship="Self.FK__finalJoin__membe__10566F31" FromRole="members" ToRole="finalJoinStatus" />
+          <NavigationProperty Name="fingerprints" Relationship="Self.FK__fingerpri__membe__5FB337D6" FromRole="members" ToRole="fingerprints" />
+          <NavigationProperty Name="initialJoinStatus" Relationship="Self.FK__initialJo__membe__14270015" FromRole="members" ToRole="initialJoinStatus" />
+          <NavigationProperty Name="interviewContacts" Relationship="Self.FK__interview__membe__628FA481" FromRole="members" ToRole="interviewContact" />
+          <NavigationProperty Name="interviewSchedules" Relationship="Self.FK__interview__membe__656C112C" FromRole="members" ToRole="interviewSchedule" />
+          <NavigationProperty Name="jobs" Relationship="Self.FK__jobs__memberID__17F790F9" FromRole="members" ToRole="jobs" />
+          <NavigationProperty Name="jotForms" Relationship="Self.FK__jotForm__memberI__68487DD7" FromRole="members" ToRole="jotForm" />
+          <NavigationProperty Name="leaveStatus" Relationship="Self.FK__leaveStat__membe__1BC821DD" FromRole="members" ToRole="leaveStatus" />
+          <NavigationProperty Name="phones" Relationship="Self.FK__phone__memberID__6B24EA82" FromRole="members" ToRole="phone" />
+          <NavigationProperty Name="physicalPasseds" Relationship="Self.FK__physicalP__membe__6E01572D" FromRole="members" ToRole="physicalPassed" />
+          <NavigationProperty Name="physicalSchedules" Relationship="Self.FK__physicalS__membe__70DDC3D8" FromRole="members" ToRole="physicalSchedule" />
+          <NavigationProperty Name="probations" Relationship="Self.FK__probation__membe__73BA3083" FromRole="members" ToRole="probation" />
+          <NavigationProperty Name="resigneds" Relationship="Self.FK__resigned__member__76969D2E" FromRole="members" ToRole="resigned" />
+          <NavigationProperty Name="rideAlongs" Relationship="Self.FK__rideAlong__membe__797309D9" FromRole="members" ToRole="rideAlong" />
+          <NavigationProperty Name="statusChanges" Relationship="Self.FK__statusCha__membe__1F98B2C1" FromRole="members" ToRole="statusChange" />
+          <NavigationProperty Name="vrs" Relationship="Self.FK__vrs__memberID__7C4F7684" FromRole="members" ToRole="vrs" />
+        </EntityType>
+        <EntityType Name="phone">
+          <Key>
+            <PropertyRef Name="phoneID" />
+          </Key>
+          <Property Name="phoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__phone__memberID__6B24EA82" FromRole="phone" ToRole="members" />
+        </EntityType>
+        <EntityType Name="physicalPassed">
+          <Key>
+            <PropertyRef Name="physPassID" />
+          </Key>
+          <Property Name="physPassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="passPhysical" Type="Boolean" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__physicalP__membe__6E01572D" FromRole="physicalPassed" ToRole="members" />
+        </EntityType>
+        <EntityType Name="physicalSchedule">
+          <Key>
+            <PropertyRef Name="physSchID" />
+          </Key>
+          <Property Name="physSchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="physicalScheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__physicalS__membe__70DDC3D8" FromRole="physicalSchedule" ToRole="members" />
+        </EntityType>
+        <EntityType Name="probation">
+          <Key>
+            <PropertyRef Name="probID" />
+          </Key>
+          <Property Name="probID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="probationExtensionStartDate" Type="DateTime" Precision="0" />
+          <Property Name="probationExtensionEndDate" Type="DateTime" Precision="0" />
+          <Property Name="probationExtensionReason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__probation__membe__73BA3083" FromRole="probation" ToRole="members" />
+        </EntityType>
+        <EntityType Name="resigned">
+          <Key>
+            <PropertyRef Name="resignID" />
+          </Key>
+          <Property Name="resignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateResigned" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__resigned__member__76969D2E" FromRole="resigned" ToRole="members" />
+        </EntityType>
+        <EntityType Name="rideAlong">
+          <Key>
+            <PropertyRef Name="rideID" />
+          </Key>
+          <Property Name="rideID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="rideAlongFinished" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__rideAlong__membe__797309D9" FromRole="rideAlong" ToRole="members" />
+        </EntityType>
+        <EntityType Name="statusChange">
+          <Key>
+            <PropertyRef Name="statusID" />
+          </Key>
+          <Property Name="statusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="statID" Type="Int32" Nullable="false" />
+          <Property Name="statusChangeDate" Type="DateTime" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__statusCha__membe__1F98B2C1" FromRole="statusChange" ToRole="members" />
+          <NavigationProperty Name="statusType" Relationship="Self.FK__statusCha__statI__208CD6FA" FromRole="statusChange" ToRole="statusTypes" />
+        </EntityType>
+        <EntityType Name="statusType">
+          <Key>
+            <PropertyRef Name="statID" />
+          </Key>
+          <Property Name="statID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="statusType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="finalJoinStatus" Relationship="Self.FK__finalJoin__statI__114A936A" FromRole="statusTypes" ToRole="finalJoinStatus" />
+          <NavigationProperty Name="initialJoinStatus" Relationship="Self.FK__initialJo__statI__151B244E" FromRole="statusTypes" ToRole="initialJoinStatus" />
+          <NavigationProperty Name="statusChanges" Relationship="Self.FK__statusCha__statI__208CD6FA" FromRole="statusTypes" ToRole="statusChange" />
+        </EntityType>
+        <EntityType Name="vr">
+          <Key>
+            <PropertyRef Name="vrsID" />
+          </Key>
+          <Property Name="vrsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="dateVrsCompleted" Type="DateTime" Precision="0" />
+          <Property Name="vrsPassed" Type="Boolean" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="member" Relationship="Self.FK__vrs__memberID__7C4F7684" FromRole="vrs" ToRole="members" />
+        </EntityType>
+        <Association Name="FK__address__memberI__2739D489">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="address" Type="Self.address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__applicati__appSt__09A971A2">
+          <End Role="applicationStatusTypes" Type="Self.applicationStatusType" Multiplicity="1" />
+          <End Role="applicationStatus" Type="Self.applicationStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="applicationStatusTypes">
+              <PropertyRef Name="appStatTypeID" />
+            </Principal>
+            <Dependent Role="applicationStatus">
+              <PropertyRef Name="appStatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__applicati__membe__08B54D69">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="applicationStatus" Type="Self.applicationStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="applicationStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__awards__awardTyp__0D7A0286">
+          <End Role="awardTypes" Type="Self.awardType" Multiplicity="1" />
+          <End Role="awards" Type="Self.award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="awardTypes">
+              <PropertyRef Name="awardTypeID" />
+            </Principal>
+            <Dependent Role="awards">
+              <PropertyRef Name="awardTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__awards__memberID__0C85DE4D">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="awards" Type="Self.award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="awards">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__backgroun__membe__5165187F">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="background" Type="Self.background" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="background">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__birthdays__membe__5441852A">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="birthdays" Type="Self.birthday" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="birthdays">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__countyNum__membe__571DF1D5">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="countyNumber" Type="Self.countyNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="countyNumber">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dropped__memberI__59FA5E80">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="dropped" Type="Self.dropped" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="dropped">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dualMembe__membe__5CD6CB2B">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="dualMembers" Type="Self.dualMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="dualMembers">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__email__memberID__4E88ABD4">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="email" Type="Self.email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="email">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__finalJoin__membe__10566F31">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="finalJoinStatus" Type="Self.finalJoinStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="finalJoinStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__finalJoin__statI__114A936A">
+          <End Role="statusTypes" Type="Self.statusType" Multiplicity="1" />
+          <End Role="finalJoinStatus" Type="Self.finalJoinStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="finalJoinStatus">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__fingerpri__membe__5FB337D6">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="fingerprints" Type="Self.fingerprint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="fingerprints">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__initialJo__membe__14270015">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="initialJoinStatus" Type="Self.initialJoinStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="initialJoinStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__initialJo__statI__151B244E">
+          <End Role="statusTypes" Type="Self.statusType" Multiplicity="1" />
+          <End Role="initialJoinStatus" Type="Self.initialJoinStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="initialJoinStatus">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__interview__membe__628FA481">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="interviewContact" Type="Self.interviewContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="interviewContact">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__interview__membe__656C112C">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="interviewSchedule" Type="Self.interviewSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="interviewSchedule">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jobs__jobTypeID__18EBB532">
+          <End Role="jobTypes" Type="Self.jobType" Multiplicity="1" />
+          <End Role="jobs" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobTypes">
+              <PropertyRef Name="jobTypeID" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="jobTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jobs__memberID__17F790F9">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="jobs" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__jotForm__memberI__68487DD7">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="jotForm" Type="Self.jotForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="jotForm">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__leaveStat__leave__1CBC4616">
+          <End Role="leaveTypes" Type="Self.leaveType" Multiplicity="1" />
+          <End Role="leaveStatus" Type="Self.leaveStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="leaveTypes">
+              <PropertyRef Name="leaveTypeID" />
+            </Principal>
+            <Dependent Role="leaveStatus">
+              <PropertyRef Name="leaveTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__leaveStat__membe__1BC821DD">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="leaveStatus" Type="Self.leaveStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="leaveStatus">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__phone__memberID__6B24EA82">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="phone" Type="Self.phone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="phone">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__physicalP__membe__6E01572D">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="physicalPassed" Type="Self.physicalPassed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="physicalPassed">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__physicalS__membe__70DDC3D8">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="physicalSchedule" Type="Self.physicalSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="physicalSchedule">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__probation__membe__73BA3083">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="probation" Type="Self.probation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="probation">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__resigned__member__76969D2E">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="resigned" Type="Self.resigned" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="resigned">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rideAlong__membe__797309D9">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="rideAlong" Type="Self.rideAlong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="rideAlong">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__statusCha__membe__1F98B2C1">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="statusChange" Type="Self.statusChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="statusChange">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vrs__memberID__7C4F7684">
+          <End Role="members" Type="Self.member" Multiplicity="1" />
+          <End Role="vrs" Type="Self.vr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="members">
+              <PropertyRef Name="memberID" />
+            </Principal>
+            <Dependent Role="vrs">
+              <PropertyRef Name="memberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__statusCha__statI__208CD6FA">
+          <End Role="statusTypes" Type="Self.statusType" Multiplicity="1" />
+          <End Role="statusChange" Type="Self.statusChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statusTypes">
+              <PropertyRef Name="statID" />
+            </Principal>
+            <Dependent Role="statusChange">
+              <PropertyRef Name="statID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LVRSMEMBERSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="addresses" EntityType="Self.address" />
+          <EntitySet Name="applicationStatus" EntityType="Self.applicationStatu" />
+          <EntitySet Name="applicationStatusTypes" EntityType="Self.applicationStatusType" />
+          <EntitySet Name="awards" EntityType="Self.award" />
+          <EntitySet Name="awardTypes" EntityType="Self.awardType" />
+          <EntitySet Name="backgrounds" EntityType="Self.background" />
+          <EntitySet Name="birthdays" EntityType="Self.birthday" />
+          <EntitySet Name="countyNumbers" EntityType="Self.countyNumber" />
+          <EntitySet Name="droppeds" EntityType="Self.dropped" />
+          <EntitySet Name="dualMembers" EntityType="Self.dualMember" />
+          <EntitySet Name="emails" EntityType="Self.email" />
+          <EntitySet Name="finalJoinStatus" EntityType="Self.finalJoinStatu" />
+          <EntitySet Name="fingerprints" EntityType="Self.fingerprint" />
+          <EntitySet Name="initialJoinStatus" EntityType="Self.initialJoinStatu" />
+          <EntitySet Name="interviewContacts" EntityType="Self.interviewContact" />
+          <EntitySet Name="interviewSchedules" EntityType="Self.interviewSchedule" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="jobTypes" EntityType="Self.jobType" />
+          <EntitySet Name="jotForms" EntityType="Self.jotForm" />
+          <EntitySet Name="leaveStatus" EntityType="Self.leaveStatu" />
+          <EntitySet Name="leaveTypes" EntityType="Self.leaveType" />
+          <EntitySet Name="members" EntityType="Self.member" />
+          <EntitySet Name="phones" EntityType="Self.phone" />
+          <EntitySet Name="physicalPasseds" EntityType="Self.physicalPassed" />
+          <EntitySet Name="physicalSchedules" EntityType="Self.physicalSchedule" />
+          <EntitySet Name="probations" EntityType="Self.probation" />
+          <EntitySet Name="resigneds" EntityType="Self.resigned" />
+          <EntitySet Name="rideAlongs" EntityType="Self.rideAlong" />
+          <EntitySet Name="statusChanges" EntityType="Self.statusChange" />
+          <EntitySet Name="statusTypes" EntityType="Self.statusType" />
+          <EntitySet Name="vrs" EntityType="Self.vr" />
+          <AssociationSet Name="FK__address__memberI__2739D489" Association="Self.FK__address__memberI__2739D489">
+            <End Role="members" EntitySet="members" />
+            <End Role="address" EntitySet="addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__applicati__appSt__09A971A2" Association="Self.FK__applicati__appSt__09A971A2">
+            <End Role="applicationStatusTypes" EntitySet="applicationStatusTypes" />
+            <End Role="applicationStatus" EntitySet="applicationStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__applicati__membe__08B54D69" Association="Self.FK__applicati__membe__08B54D69">
+            <End Role="members" EntitySet="members" />
+            <End Role="applicationStatus" EntitySet="applicationStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__awards__awardTyp__0D7A0286" Association="Self.FK__awards__awardTyp__0D7A0286">
+            <End Role="awardTypes" EntitySet="awardTypes" />
+            <End Role="awards" EntitySet="awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__awards__memberID__0C85DE4D" Association="Self.FK__awards__memberID__0C85DE4D">
+            <End Role="members" EntitySet="members" />
+            <End Role="awards" EntitySet="awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__backgroun__membe__5165187F" Association="Self.FK__backgroun__membe__5165187F">
+            <End Role="members" EntitySet="members" />
+            <End Role="background" EntitySet="backgrounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__birthdays__membe__5441852A" Association="Self.FK__birthdays__membe__5441852A">
+            <End Role="members" EntitySet="members" />
+            <End Role="birthdays" EntitySet="birthdays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__countyNum__membe__571DF1D5" Association="Self.FK__countyNum__membe__571DF1D5">
+            <End Role="members" EntitySet="members" />
+            <End Role="countyNumber" EntitySet="countyNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dropped__memberI__59FA5E80" Association="Self.FK__dropped__memberI__59FA5E80">
+            <End Role="members" EntitySet="members" />
+            <End Role="dropped" EntitySet="droppeds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dualMembe__membe__5CD6CB2B" Association="Self.FK__dualMembe__membe__5CD6CB2B">
+            <End Role="members" EntitySet="members" />
+            <End Role="dualMembers" EntitySet="dualMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__email__memberID__4E88ABD4" Association="Self.FK__email__memberID__4E88ABD4">
+            <End Role="members" EntitySet="members" />
+            <End Role="email" EntitySet="emails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__finalJoin__membe__10566F31" Association="Self.FK__finalJoin__membe__10566F31">
+            <End Role="members" EntitySet="members" />
+            <End Role="finalJoinStatus" EntitySet="finalJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__finalJoin__statI__114A936A" Association="Self.FK__finalJoin__statI__114A936A">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="finalJoinStatus" EntitySet="finalJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__fingerpri__membe__5FB337D6" Association="Self.FK__fingerpri__membe__5FB337D6">
+            <End Role="members" EntitySet="members" />
+            <End Role="fingerprints" EntitySet="fingerprints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__initialJo__membe__14270015" Association="Self.FK__initialJo__membe__14270015">
+            <End Role="members" EntitySet="members" />
+            <End Role="initialJoinStatus" EntitySet="initialJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__initialJo__statI__151B244E" Association="Self.FK__initialJo__statI__151B244E">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="initialJoinStatus" EntitySet="initialJoinStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__interview__membe__628FA481" Association="Self.FK__interview__membe__628FA481">
+            <End Role="members" EntitySet="members" />
+            <End Role="interviewContact" EntitySet="interviewContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__interview__membe__656C112C" Association="Self.FK__interview__membe__656C112C">
+            <End Role="members" EntitySet="members" />
+            <End Role="interviewSchedule" EntitySet="interviewSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jobs__jobTypeID__18EBB532" Association="Self.FK__jobs__jobTypeID__18EBB532">
+            <End Role="jobTypes" EntitySet="jobTypes" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jobs__memberID__17F790F9" Association="Self.FK__jobs__memberID__17F790F9">
+            <End Role="members" EntitySet="members" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__jotForm__memberI__68487DD7" Association="Self.FK__jotForm__memberI__68487DD7">
+            <End Role="members" EntitySet="members" />
+            <End Role="jotForm" EntitySet="jotForms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__leaveStat__leave__1CBC4616" Association="Self.FK__leaveStat__leave__1CBC4616">
+            <End Role="leaveTypes" EntitySet="leaveTypes" />
+            <End Role="leaveStatus" EntitySet="leaveStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__leaveStat__membe__1BC821DD" Association="Self.FK__leaveStat__membe__1BC821DD">
+            <End Role="members" EntitySet="members" />
+            <End Role="leaveStatus" EntitySet="leaveStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__phone__memberID__6B24EA82" Association="Self.FK__phone__memberID__6B24EA82">
+            <End Role="members" EntitySet="members" />
+            <End Role="phone" EntitySet="phones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__physicalP__membe__6E01572D" Association="Self.FK__physicalP__membe__6E01572D">
+            <End Role="members" EntitySet="members" />
+            <End Role="physicalPassed" EntitySet="physicalPasseds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__physicalS__membe__70DDC3D8" Association="Self.FK__physicalS__membe__70DDC3D8">
+            <End Role="members" EntitySet="members" />
+            <End Role="physicalSchedule" EntitySet="physicalSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK__probation__membe__73BA3083" Association="Self.FK__probation__membe__73BA3083">
+            <End Role="members" EntitySet="members" />
+            <End Role="probation" EntitySet="probations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__resigned__member__76969D2E" Association="Self.FK__resigned__member__76969D2E">
+            <End Role="members" EntitySet="members" />
+            <End Role="resigned" EntitySet="resigneds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rideAlong__membe__797309D9" Association="Self.FK__rideAlong__membe__797309D9">
+            <End Role="members" EntitySet="members" />
+            <End Role="rideAlong" EntitySet="rideAlongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__statusCha__membe__1F98B2C1" Association="Self.FK__statusCha__membe__1F98B2C1">
+            <End Role="members" EntitySet="members" />
+            <End Role="statusChange" EntitySet="statusChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vrs__memberID__7C4F7684" Association="Self.FK__vrs__memberID__7C4F7684">
+            <End Role="members" EntitySet="members" />
+            <End Role="vrs" EntitySet="vrs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__statusCha__statI__208CD6FA" Association="Self.FK__statusCha__statI__208CD6FA">
+            <End Role="statusTypes" EntitySet="statusTypes" />
+            <End Role="statusChange" EntitySet="statusChanges" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LVRSMEMBERSModelStoreContainer" CdmEntityContainer="LVRSMEMBERSEntities">
+          <EntitySetMapping Name="addresses">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.address">
+              <MappingFragment StoreEntitySet="address">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+                <ScalarProperty Name="addressCity" ColumnName="addressCity" />
+                <ScalarProperty Name="addressState" ColumnName="addressState" />
+                <ScalarProperty Name="addressZip" ColumnName="addressZip" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="applicationStatus">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.applicationStatu">
+              <MappingFragment StoreEntitySet="applicationStatus">
+                <ScalarProperty Name="appStatID" ColumnName="appStatID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="appStatTypeID" ColumnName="appStatTypeID" />
+                <ScalarProperty Name="appStatNotes" ColumnName="appStatNotes" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="applicationStatusTypes">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.applicationStatusType">
+              <MappingFragment StoreEntitySet="applicationStatusTypes">
+                <ScalarProperty Name="appStatTypeID" ColumnName="appStatTypeID" />
+                <ScalarProperty Name="applicationStatusType1" ColumnName="applicationStatusType" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="awards">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.award">
+              <MappingFragment StoreEntitySet="awards">
+                <ScalarProperty Name="awardID" ColumnName="awardID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="awardTypeID" ColumnName="awardTypeID" />
+                <ScalarProperty Name="awardDate" ColumnName="awardDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="awardTypes">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.awardType">
+              <MappingFragment StoreEntitySet="awardTypes">
+                <ScalarProperty Name="awardTypeID" ColumnName="awardTypeID" />
+                <ScalarProperty Name="awardType1" ColumnName="awardType" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="backgrounds">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.background">
+              <MappingFragment StoreEntitySet="background">
+                <ScalarProperty Name="backID" ColumnName="backID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateBackgroundPassed" ColumnName="dateBackgroundPassed" />
+                <ScalarProperty Name="backgroundSuccess" ColumnName="backgroundSuccess" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="birthdays">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.birthday">
+              <MappingFragment StoreEntitySet="birthdays">
+                <ScalarProperty Name="birthID" ColumnName="birthID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countyNumbers">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.countyNumber">
+              <MappingFragment StoreEntitySet="countyNumber">
+                <ScalarProperty Name="counNumID" ColumnName="counNumID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateCountyNumberReceived" ColumnName="dateCountyNumberReceived" />
+                <ScalarProperty Name="counNum" ColumnName="counNum" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="droppeds">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.dropped">
+              <MappingFragment StoreEntitySet="dropped">
+                <ScalarProperty Name="dropID" ColumnName="dropID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateDropped" ColumnName="dateDropped" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dualMembers">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.dualMember">
+              <MappingFragment StoreEntitySet="dualMembers">
+                <ScalarProperty Name="dualID" ColumnName="dualID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateDualAccepted" ColumnName="dateDualAccepted" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="emails">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.email">
+              <MappingFragment StoreEntitySet="email">
+                <ScalarProperty Name="emailID" ColumnName="emailID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="finalJoinStatus">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.finalJoinStatu">
+              <MappingFragment StoreEntitySet="finalJoinStatus">
+                <ScalarProperty Name="finJoinID" ColumnName="finJoinID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="statID" ColumnName="statID" />
+                <ScalarProperty Name="finalJoinDate" ColumnName="finalJoinDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fingerprints">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.fingerprint">
+              <MappingFragment StoreEntitySet="fingerprints">
+                <ScalarProperty Name="fingID" ColumnName="fingID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="fingerprintAppointmentDate" ColumnName="fingerprintAppointmentDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="initialJoinStatus">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.initialJoinStatu">
+              <MappingFragment StoreEntitySet="initialJoinStatus">
+                <ScalarProperty Name="initJoinID" ColumnName="initJoinID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="statID" ColumnName="statID" />
+                <ScalarProperty Name="initialJoinDate" ColumnName="initialJoinDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="interviewContacts">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.interviewContact">
+              <MappingFragment StoreEntitySet="interviewContact">
+                <ScalarProperty Name="intConID" ColumnName="intConID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="contactDate" ColumnName="contactDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="interviewSchedules">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.interviewSchedule">
+              <MappingFragment StoreEntitySet="interviewSchedule">
+                <ScalarProperty Name="intSchID" ColumnName="intSchID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="interviewScheduled" ColumnName="interviewScheduled" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.job">
+              <MappingFragment StoreEntitySet="jobs">
+                <ScalarProperty Name="jobID" ColumnName="jobID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="jobTypeID" ColumnName="jobTypeID" />
+                <ScalarProperty Name="jobDate" ColumnName="jobDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobTypes">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.jobType">
+              <MappingFragment StoreEntitySet="jobTypes">
+                <ScalarProperty Name="jobTypeID" ColumnName="jobTypeID" />
+                <ScalarProperty Name="jobType1" ColumnName="jobType" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jotForms">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.jotForm">
+              <MappingFragment StoreEntitySet="jotForm">
+                <ScalarProperty Name="jotID" ColumnName="jotID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="jotFormReceived" ColumnName="jotFormReceived" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leaveStatus">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.leaveStatu">
+              <MappingFragment StoreEntitySet="leaveStatus">
+                <ScalarProperty Name="leaveID" ColumnName="leaveID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="leaveTypeID" ColumnName="leaveTypeID" />
+                <ScalarProperty Name="leaveApproved" ColumnName="leaveApproved" />
+                <ScalarProperty Name="leaveStartDate" ColumnName="leaveStartDate" />
+                <ScalarProperty Name="leaveEndDate" ColumnName="leaveEndDate" />
+                <ScalarProperty Name="leaveNotes" ColumnName="leaveNotes" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leaveTypes">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.leaveType">
+              <MappingFragment StoreEntitySet="leaveTypes">
+                <ScalarProperty Name="leaveTypeID" ColumnName="leaveTypeID" />
+                <ScalarProperty Name="leaveType1" ColumnName="leaveType" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="members">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.member">
+              <MappingFragment StoreEntitySet="members">
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phones">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.phone">
+              <MappingFragment StoreEntitySet="phone">
+                <ScalarProperty Name="phoneID" ColumnName="phoneID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="physicalPasseds">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.physicalPassed">
+              <MappingFragment StoreEntitySet="physicalPassed">
+                <ScalarProperty Name="physPassID" ColumnName="physPassID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="passPhysical" ColumnName="passPhysical" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="physicalSchedules">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.physicalSchedule">
+              <MappingFragment StoreEntitySet="physicalSchedule">
+                <ScalarProperty Name="physSchID" ColumnName="physSchID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="physicalScheduleDate" ColumnName="physicalScheduleDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="probations">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.probation">
+              <MappingFragment StoreEntitySet="probation">
+                <ScalarProperty Name="probID" ColumnName="probID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="probationExtensionStartDate" ColumnName="probationExtensionStartDate" />
+                <ScalarProperty Name="probationExtensionEndDate" ColumnName="probationExtensionEndDate" />
+                <ScalarProperty Name="probationExtensionReason" ColumnName="probationExtensionReason" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resigneds">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.resigned">
+              <MappingFragment StoreEntitySet="resigned">
+                <ScalarProperty Name="resignID" ColumnName="resignID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateResigned" ColumnName="dateResigned" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rideAlongs">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.rideAlong">
+              <MappingFragment StoreEntitySet="rideAlong">
+                <ScalarProperty Name="rideID" ColumnName="rideID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="rideAlongFinished" ColumnName="rideAlongFinished" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statusChanges">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.statusChange">
+              <MappingFragment StoreEntitySet="statusChange">
+                <ScalarProperty Name="statusID" ColumnName="statusID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="statID" ColumnName="statID" />
+                <ScalarProperty Name="statusChangeDate" ColumnName="statusChangeDate" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statusTypes">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.statusType">
+              <MappingFragment StoreEntitySet="statusTypes">
+                <ScalarProperty Name="statID" ColumnName="statID" />
+                <ScalarProperty Name="statusType1" ColumnName="statusType" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vrs">
+            <EntityTypeMapping TypeName="LVRSMEMBERSModel.vr">
+              <MappingFragment StoreEntitySet="vrs">
+                <ScalarProperty Name="vrsID" ColumnName="vrsID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="dateVrsCompleted" ColumnName="dateVrsCompleted" />
+                <ScalarProperty Name="vrsPassed" ColumnName="vrsPassed" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

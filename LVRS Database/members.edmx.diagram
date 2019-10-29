@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e6144f5f51754abbb98d5b463ba10abb" Name="Diagram1">
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.address" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.applicationStatu" Width="1.5" PointX="6" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.applicationStatusType" Width="1.5" PointX="3.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.award" Width="1.5" PointX="6" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.awardType" Width="1.5" PointX="3.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.background" Width="1.5" PointX="3" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.birthday" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.countyNumber" Width="1.5" PointX="3" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.dropped" Width="1.5" PointX="3" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.dualMember" Width="1.5" PointX="3" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.email" Width="1.5" PointX="3" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.finalJoinStatu" Width="1.5" PointX="6" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.fingerprint" Width="1.5" PointX="3" PointY="45" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.initialJoinStatu" Width="1.5" PointX="9" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.interviewContact" Width="1.5" PointX="3" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.interviewSchedule" Width="1.5" PointX="3" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.job" Width="1.5" PointX="9" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.jobType" Width="1.5" PointX="6.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.jotForm" Width="1.5" PointX="3" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.leaveStatu" Width="1.5" PointX="9" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.leaveType" Width="1.5" PointX="6.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.member" Width="1.5" PointX="0.75" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.phone" Width="1.5" PointX="3" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.physicalPassed" Width="1.5" PointX="3" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.physicalSchedule" Width="1.5" PointX="3" PointY="71.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.probation" Width="1.5" PointX="3" PointY="74.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.resigned" Width="1.5" PointX="3" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.rideAlong" Width="1.5" PointX="3" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.statusChange" Width="1.5" PointX="6" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.statusType" Width="1.5" PointX="3.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LVRSMEMBERSModel.vr" Width="1.5" PointX="3" PointY="85.75" IsExpanded="true" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__address__memberI__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__applicati__appSt__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__applicati__membe__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__awards__awardTyp__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__awards__memberID__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__backgroun__membe__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__birthdays__membe__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__countyNum__membe__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__dropped__memberI__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__dualMembe__membe__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__email__memberID__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__finalJoin__membe__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__finalJoin__statI__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__fingerpri__membe__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__initialJo__membe__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__initialJo__statI__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__interview__membe__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__interview__membe__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__jobs__jobTypeID__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__jobs__memberID__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__jotForm__memberI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__leaveStat__leave__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__leaveStat__membe__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__phone__memberID__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__physicalP__membe__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__physicalS__membe__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__probation__membe__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__resigned__member__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__rideAlong__membe__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__statusCha__membe__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__vrs__memberID__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="LVRSMEMBERSModel.FK__statusCha__statI__208CD6FA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
